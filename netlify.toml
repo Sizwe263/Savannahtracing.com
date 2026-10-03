@@ -1,3 +1,5 @@
+[Reading 31 lines from start (total: 31 lines, 0 remaining)]
+
 [build]
   publish = "."
 
@@ -22,6 +24,47 @@
   status = 302
   force = true
 
+
+[[redirects]]
+  from = "/benefitwatch"
+  to = "/benefitwatch.html"
+  status = 200
+
+[[redirects]]
+  from = "/unclaimed-benefits-namibia"
+  to = "/unclaimed-benefits-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/beneficiary-tracing-namibia"
+  to = "/beneficiary-tracing-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/pension-benefit-tracing-namibia"
+  to = "/pension-benefit-tracing-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/insurance-benefit-recovery-namibia"
+  to = "/insurance-benefit-recovery-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/next-of-kin-tracing-namibia"
+  to = "/next-of-kin-tracing-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/institutional-tracing"
+  to = "/institutional-tracing.html"
+  status = 200
+
+[[redirects]]
+  from = "/recovery-services"
+  to = "/recovery-services.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -29,3 +72,5 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[executed on device: Sizwe-Mkanya (f471df69-c47c-4a7e-9608-9299b6bfd15d)]

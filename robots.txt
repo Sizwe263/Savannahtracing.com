@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /operations
+Disallow: /.netlify/
+Sitemap: https://savannahtracing.com/sitemap.xml
