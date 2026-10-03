@@ -36,7 +36,7 @@ footer{background:#fff;color:#243746;padding:46px 0 24px;border-top:1px solid va
 <div class="hero-card"><span class="pill">FOUNDING MEMBER PRICE</span><div style="margin-top:14px"><span class="price">N$35<small>/month</small></span></div><div><span class="strike">N$49/month standard</span> · 12-month membership</div><div class="mini"><div><strong>3</strong>people covered</div><div><strong>10%</strong>success fee</div><div><strong>N$420</strong>first-year membership</div></div><p style="font-size:13px;color:var(--muted);margin:18px 0 0">No recovered money = no Success Recovery Fee.</p></div>
 </div></section>
 
-<section><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#8b6a18">BenefitWatch</div><h2>We do more than find a possible benefit.</h2><p>When Savannah identifies a potential entitlement, our team verifies it, manages the documents, engages the institution, follows the case and assists with the recovery process.</p></div>
+<section id="benefitwatch"><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#8b6a18">BenefitWatch</div><h2>We do more than find a possible benefit.</h2><p>When Savannah identifies a potential entitlement, our team verifies it, manages the documents, engages the institution, follows the case and assists with the recovery process.</p></div>
 <div class="cards"><div class="card"><b>3 Protected Profiles</b><p>You plus two nominated people under one membership.</p></div><div class="card"><b>Continuous Monitoring</b><p>Searches across authorised, participating and available institutional sources.</p></div><div class="card"><b>Managed Recovery</b><p>Savannah handles case progression, documentation and institutional follow-up.</p></div><div class="card"><b>Pay for Results</b><p>10% Success Recovery Fee only on funds successfully recovered through a Savannah-managed case.</p></div></div></div></section>
 
 <section class="band" id="how"><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#8b6a18">TRACE. VERIFY. RECOVER.</div><h2>From search to payment.</h2></div>
@@ -68,6 +68,7 @@ footer{background:#fff;color:#243746;padding:46px 0 24px;border-top:1px solid va
 <div class="field"><label>Mobile number</label><input class="input" id="primaryPhone" required></div>
 <div class="field"><label>Email</label><input class="input" id="primaryEmail" type="email"></div></div></div>
 <div id="nominees"></div>
+<div id="profileMessage" class="notice hidden" role="alert" aria-live="polite"></div>
 <div class="modal-actions"><button class="btn btn-ghost" data-prev>Back</button><button class="btn btn-dark" data-next>Continue</button></div></div>
 
 <div class="panel" data-step="3">
@@ -83,16 +84,16 @@ footer{background:#fff;color:#243746;padding:46px 0 24px;border-top:1px solid va
 
 <script>
 const modal=document.getElementById('bwModal'); let step=1;
-document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{modal.classList.add('open');document.body.style.overflow='hidden';});
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{step=1;draw();modal.classList.add('open');modal.scrollTop=0;document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('modalTitle')?.focus?.(),0);});
 document.getElementById('closeModal').onclick=()=>{modal.classList.remove('open');document.body.style.overflow='';};
-modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow='';}});
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow='';}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open')){modal.classList.remove('open');document.body.style.overflow='';}});
 function draw(){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===step));document.querySelectorAll('.progress span').forEach((x,i)=>x.classList.toggle('on',i<step));}
 document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>{if(step===2&&!validateProfiles())return;step=Math.min(3,step+1);draw();});
 document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>{step=Math.max(1,step-1);draw();});
 const nominees=document.getElementById('nominees');
 for(let i=2;i<=3;i++){nominees.insertAdjacentHTML('beforeend',`<div class="person"><h3>Person ${i}</h3><div class="form-grid"><div class="field"><label>Relationship</label><select id="rel${i}"><option>Spouse</option><option>Parent</option><option>Child</option><option>Sibling</option><option>Other</option></select></div><div class="field"><label>First name</label><input class="input" id="fn${i}"></div><div class="field"><label>Middle names</label><input class="input" id="mn${i}"></div><div class="field"><label>Last name</label><input class="input" id="ln${i}"></div><div class="field"><label>ID / Passport number</label><input class="input" id="id${i}"></div><div class="field"><label>Date of birth</label><input class="input" id="dob${i}" type="date"></div></div></div>`);}
 function names(s){const x=s.trim().split(/\s+/);return{first_name:x[0]||'',middle_names:x.length>2?x.slice(1,-1).join(' '):'',last_name:x.length>1?x[x.length-1]:''};}
-function validateProfiles(){const n=names(document.getElementById('primaryFullName').value);if(!n.first_name||!n.last_name||!document.getElementById('primaryPhone').value.trim()){alert('Please enter your full name and mobile number.');return false;}for(let i=2;i<=3;i++){if(!document.getElementById('fn'+i).value.trim()||!document.getElementById('ln'+i).value.trim()){alert('Please enter first and last names for Person '+i+'.');return false;}}return true;}
+function validateProfiles(){const m=document.getElementById('profileMessage');m.className='notice hidden';const n=names(document.getElementById('primaryFullName').value);if(!n.first_name||!n.last_name||!document.getElementById('primaryPhone').value.trim()){m.textContent='Please complete your full name and mobile number before continuing.';m.className='notice error';m.scrollIntoView({behavior:'smooth',block:'center'});return false;}for(let i=2;i<=3;i++){if(!document.getElementById('fn'+i).value.trim()||!document.getElementById('ln'+i).value.trim()){m.textContent='Please complete the first and last name for Person '+i+' before continuing.';m.className='notice error';m.scrollIntoView({behavior:'smooth',block:'center'});return false;}}return true;}
 document.getElementById('submitBW').onclick=async()=>{
 const msg=document.getElementById('formMessage');msg.className='notice hidden';
 if(!['consentTracing','consentMembership','consentRecovery'].every(id=>document.getElementById(id).checked)){msg.textContent='Please accept all three mandates to continue.';msg.className='notice error';return;}
