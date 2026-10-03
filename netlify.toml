@@ -18,8 +18,9 @@
 
 [[redirects]]
   from = "/operations"
-  to = "/operations.html"
-  status = 200
+  to = "https://novelty-corporate-control.netlify.app/savannah"
+  status = 302
+  force = true
 
 [[headers]]
   for = "/*"
