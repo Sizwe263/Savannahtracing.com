@@ -16,6 +16,11 @@
   to = "/privacy.html"
   status = 200
 
+[[redirects]]
+  from = "/operations"
+  to = "/operations.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
