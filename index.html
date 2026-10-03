@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Savannah Tracing locates and reconnects beneficiaries with unpaid pensions, insurance benefits and claims across Namibia."/>
+<title>Savannah Tracing | BenefitWatch Namibia</title>
+<style>
+:root{--navy:#071b2d;--navy2:#0d2d49;--gold:#d5a740;--cream:#f7f5ef;--ink:#14212c;--muted:#65717c;--line:#dfe5e8;--ok:#0c7a5a;--danger:#9b2c2c}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+header{height:78px;display:flex;align-items:center;border-bottom:1px solid rgba(7,27,45,.08);position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:20}
+nav{display:flex;align-items:center;justify-content:space-between;width:100%}.logo{height:46px}.navlinks{display:flex;gap:28px;align-items:center;font-size:14px}.btn{border:0;border-radius:999px;padding:13px 20px;font-weight:750;cursor:pointer}.btn-dark{background:var(--navy);color:white}.btn-gold{background:var(--gold);color:#10202d}.btn-ghost{background:white;border:1px solid var(--line)}
+.hero{background:linear-gradient(130deg,var(--navy),var(--navy2));color:white;padding:88px 0 72px;overflow:hidden}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#d4b66e}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:15px 0 22px;letter-spacing:-.045em}.hero p{font-size:19px;line-height:1.6;color:#dce6ed;max-width:700px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.hero-card{background:white;color:var(--ink);border-radius:26px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.price{font-size:56px;font-weight:850;letter-spacing:-.05em}.price small{font-size:16px;color:var(--muted)}.strike{text-decoration:line-through;color:#8a969e}.pill{display:inline-flex;background:#fff4d5;color:#7a5a00;border-radius:999px;padding:7px 11px;font-weight:800;font-size:11px;letter-spacing:.08em}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.mini div{background:#f5f7f8;border-radius:14px;padding:14px;font-size:12px}.mini strong{display:block;font-size:18px;margin-bottom:4px}
+section{padding:72px 0}.section-head{max-width:760px;margin-bottom:34px}.section-head h2{font-size:42px;letter-spacing:-.035em;margin:8px 0 10px}.section-head p{color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:white}.card b{font-size:16px}.card p{color:var(--muted);font-size:14px;line-height:1.55}
+.band{background:var(--cream)}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{background:white;border-radius:18px;padding:22px}.num{font-weight:850;color:var(--gold);font-size:13px}
+.fee{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.fee-box{border-radius:24px;background:var(--navy);color:#fff;padding:34px}.fee-box h3{font-size:29px;margin:8px 0}.example{margin-top:20px;background:#102f4c;padding:18px;border-radius:16px;display:grid;gap:8px}.row{display:flex;justify-content:space-between;gap:20px}
+footer{background:#041421;color:#cbd6dd;padding:44px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-grid img{height:52px;filter:brightness(0) invert(1)}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(1,14,24,.74);z-index:60;padding:20px;overflow:auto}.modal-backdrop.open{display:flex;align-items:flex-start;justify-content:center}.modal{width:min(820px,100%);background:#fff;border-radius:24px;margin:30px auto;box-shadow:0 30px 90px rgba(0,0,0,.35);overflow:hidden}.modal-head{background:var(--navy);color:white;padding:24px 28px;display:flex;justify-content:space-between;align-items:flex-start}.close{background:transparent;color:white;border:0;font-size:30px;cursor:pointer}.modal-body{padding:28px}.progress{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:26px}.progress span{height:5px;background:#e9edef;border-radius:5px}.progress span.on{background:var(--gold)}.panel{display:none}.panel.active{display:block}.panel h2{margin-top:0}.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.choice{border:1px solid var(--line);border-radius:16px;padding:18px}.choice strong{display:block;margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}label{font-size:12px;font-weight:800;color:#42515d}.input,select{width:100%;border:1px solid #ccd5da;border-radius:12px;padding:12px 13px;font:inherit}.person{border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}.person h3{margin:0 0 14px}.check{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #edf0f2;font-size:14px;line-height:1.45}.check input{margin-top:3px}.notice{padding:14px 16px;border-radius:14px;background:#f5f7f8;font-size:13px;color:#4c5963}.success{background:#ecf9f3;color:#145b45}.error{background:#fff0f0;color:var(--danger)}.modal-actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.hidden{display:none!important}
+@media(max-width:850px){.hero-grid,.fee{grid-template-columns:1fr}.cards,.steps{grid-template-columns:repeat(2,1fr)}.navlinks a{display:none}.hero{padding-top:56px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:520px){.cards,.steps,.mini,.choice-grid{grid-template-columns:1fr}.hero h1{font-size:46px}.wrap{padding:0 16px}.modal-body{padding:20px}.price{font-size:48px}}
+</style>
+</head>
+<body>
+<header><div class="wrap" style="width:100%"><nav>
+<a href="/"><img class="logo" src="https://res.cloudinary.com/dvuy682ue/image/upload/v1778134293/Savannah_Logo_20260429_h1pxfd.png" alt="Savannah Tracing"></a>
+<div class="navlinks"><a href="/services">Services</a><a href="#how">How it works</a><a href="mailto:info@savannahtracing.com">Contact</a><button class="btn btn-dark" data-open>Activate BenefitWatch</button></div>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">Beneficiary Tracing & Claims Administration · Namibia</div><h1>Money may be waiting for you.</h1><p>Savannah BenefitWatch continuously helps trace possible unpaid pension benefits, insurance proceeds, claims and other financial benefits linked to you and two people you nominate.</p><div class="hero-actions"><button class="btn btn-gold" data-open>Activate BenefitWatch — N$35/month</button><a class="btn btn-ghost" href="/services">Institutional Services</a></div></div>
+<div class="hero-card"><span class="pill">FOUNDING MEMBER PRICE</span><div style="margin-top:14px"><span class="price">N$35<small>/month</small></span></div><div><span class="strike">N$49/month standard</span> · 12-month membership</div><div class="mini"><div><strong>3</strong>people covered</div><div><strong>10%</strong>success fee</div><div><strong>N$420</strong>first-year membership</div></div><p style="font-size:13px;color:var(--muted);margin:18px 0 0">No recovered money = no Success Recovery Fee.</p></div>
+</div></section>
+
+<section><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#8b6a18">BenefitWatch</div><h2>We do more than find a possible benefit.</h2><p>When Savannah identifies a potential entitlement, our team verifies it, manages the documents, engages the institution, follows the case and assists with the recovery process.</p></div>
+<div class="cards"><div class="card"><b>3 Protected Profiles</b><p>You plus two nominated people under one membership.</p></div><div class="card"><b>Continuous Monitoring</b><p>Searches across authorised, participating and available institutional sources.</p></div><div class="card"><b>Managed Recovery</b><p>Savannah handles case progression, documentation and institutional follow-up.</p></div><div class="card"><b>Pay for Results</b><p>10% Success Recovery Fee only on funds successfully recovered through a Savannah-managed case.</p></div></div></div></section>
+
+<section class="band" id="how"><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#8b6a18">TRACE. VERIFY. RECOVER.</div><h2>From search to payment.</h2></div>
+<div class="steps"><div class="step"><div class="num">01</div><h3>Join</h3><p>Activate your 12-month BenefitWatch founding membership.</p></div><div class="step"><div class="num">02</div><h3>Protect 3 people</h3><p>Create your profile and nominate two additional people.</p></div><div class="step"><div class="num">03</div><h3>We trace</h3><p>Savannah searches permitted sources and verifies potential matches.</p></div><div class="step"><div class="num">04</div><h3>We recover</h3><p>We manage the claim process and collect the agreed success fee only after payment.</p></div></div></div></section>
+
+<section><div class="wrap fee"><div><div class="eyebrow" style="color:#8b6a18">Transparent Pricing</div><h2 style="font-size:42px;margin:10px 0">One membership. One clear success fee.</h2><p style="color:var(--muted);line-height:1.7">Your founding membership is N$35 per month for 12 months. If Savannah successfully recovers money through a Savannah-managed case, the signed recovery mandate authorises a 10% Success Recovery Fee after the institution pays the benefit.</p><button class="btn btn-dark" data-open>Activate BenefitWatch</button></div>
+<div class="fee-box"><div class="eyebrow">Example</div><h3>If N$50,000 is recovered</h3><div class="example"><div class="row"><span>Institution payment</span><strong>N$50,000</strong></div><div class="row"><span>Savannah Recovery Fee (10%)</span><strong>N$5,000</strong></div><div class="row" style="border-top:1px solid #33516a;padding-top:10px"><span>Balance before institution-specific deductions</span><strong>N$45,000</strong></div></div></div></div></section>
+</main>
+
+<footer><div class="wrap footer-grid"><div><img src="https://res.cloudinary.com/dvuy682ue/image/upload/v1778134293/Savannah_Logo_20260429_h1pxfd.png" alt="Savannah Tracing"><p>TRACE. VERIFY. DELIVER.</p></div><div><b>Contact</b><p>+264 61 258 444<br>info@savannahtracing.com<br>Windhoek, Namibia</p></div><div><b>Services</b><p><a href="/services">Tracing & Claims</a><br><a href="/terms-of-service.html">Terms</a></p></div></div></footer>
+
+<div class="modal-backdrop" id="bwModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal"><div class="modal-head"><div><div class="eyebrow">SAVANNAH BENEFITWATCH</div><h2 id="modalTitle" style="margin:6px 0 0">Protect 3 people for N$35/month</h2></div><button class="close" id="closeModal" aria-label="Close">&times;</button></div>
+<div class="modal-body">
+<div class="progress"><span class="on"></span><span></span><span></span></div>
+
+<div class="panel active" data-step="1">
+<h2>Simple, transparent pricing</h2><p>Founding members pay <b>N$35/month for 12 months</b>. Standard price is N$49/month.</p>
+<div class="choice-grid"><div class="choice"><strong>N$35/month</strong>12-month founding membership<br><small>Total first year: N$420</small></div><div class="choice"><strong>10% Success Recovery Fee</strong>Only after funds are successfully recovered through a Savannah-managed case.</div></div>
+<div class="notice"><b>No recovered money = no Success Recovery Fee.</b><br>The recovery debit becomes eligible only after Savannah records confirmed institution payment.</div>
+<div class="modal-actions"><span></span><button class="btn btn-dark" data-next>Continue</button></div></div>
+
+<div class="panel" data-step="2">
+<h2>Create your 3 protected profiles</h2>
+<div class="person"><h3>Person 1 — You</h3><div class="form-grid">
+<div class="field full"><label>Full name</label><input class="input" id="primaryFullName" required></div>
+<div class="field"><label>ID / Passport number</label><input class="input" id="primaryId"></div>
+<div class="field"><label>Date of birth</label><input class="input" id="primaryDob" type="date"></div>
+<div class="field"><label>Mobile number</label><input class="input" id="primaryPhone" required></div>
+<div class="field"><label>Email</label><input class="input" id="primaryEmail" type="email"></div></div></div>
+<div id="nominees"></div>
+<div class="modal-actions"><button class="btn btn-ghost" data-prev>Back</button><button class="btn btn-dark" data-next>Continue</button></div></div>
+
+<div class="panel" data-step="3">
+<h2>Mandates & debit authority</h2><p>Your membership mandate and the Success Recovery Fee mandate are accepted separately from the outset.</p>
+<div class="form-grid"><div class="field"><label>Bank</label><input class="input" id="bankName" placeholder="Bank name"></div><div class="field"><label>Account holder</label><input class="input" id="accountHolder"></div><div class="field"><label>Account number</label><input class="input" id="accountNumber" inputmode="numeric" autocomplete="off"></div><div class="field"><label>Branch code</label><input class="input" id="branchCode" inputmode="numeric"></div></div>
+<p class="notice" style="margin-top:14px">For security, Savannah does not store the raw bank-account number in BenefitWatch. The signup service stores only a protected account fingerprint until the debit-order payment provider is connected.</p>
+<label class="check"><input type="checkbox" id="consentTracing"> <span>I authorise Savannah Tracing to perform tracing and benefit-search activities using the information I provide and sources Savannah is authorised to access.</span></label>
+<label class="check"><input type="checkbox" id="consentMembership"> <span>I authorise the N$35 monthly membership debit for the 12-month BenefitWatch founding membership.</span></label>
+<label class="check"><input type="checkbox" id="consentRecovery"> <span>I authorise Savannah Tracing to collect a Success Recovery Fee equal to 10% of each amount successfully recovered and paid to me through a Savannah-managed recovery case.</span></label>
+<div id="formMessage" class="notice hidden" style="margin-top:14px"></div>
+<div class="modal-actions"><button class="btn btn-ghost" data-prev>Back</button><button class="btn btn-gold" id="submitBW">Activate BenefitWatch — N$35/month</button></div>
+</div>
+</div></div></div>
+
+<script>
+const modal=document.getElementById('bwModal'); let step=1;
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{modal.classList.add('open');document.body.style.overflow='hidden';});
+document.getElementById('closeModal').onclick=()=>{modal.classList.remove('open');document.body.style.overflow='';};
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow='';}});
+function draw(){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===step));document.querySelectorAll('.progress span').forEach((x,i)=>x.classList.toggle('on',i<step));}
+document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>{if(step===2&&!validateProfiles())return;step=Math.min(3,step+1);draw();});
+document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>{step=Math.max(1,step-1);draw();});
+const nominees=document.getElementById('nominees');
+for(let i=2;i<=3;i++){nominees.insertAdjacentHTML('beforeend',`<div class="person"><h3>Person ${i}</h3><div class="form-grid"><div class="field"><label>Relationship</label><select id="rel${i}"><option>Spouse</option><option>Parent</option><option>Child</option><option>Sibling</option><option>Other</option></select></div><div class="field"><label>First name</label><input class="input" id="fn${i}"></div><div class="field"><label>Middle names</label><input class="input" id="mn${i}"></div><div class="field"><label>Last name</label><input class="input" id="ln${i}"></div><div class="field"><label>ID / Passport number</label><input class="input" id="id${i}"></div><div class="field"><label>Date of birth</label><input class="input" id="dob${i}" type="date"></div></div></div>`);}
+function names(s){const x=s.trim().split(/\s+/);return{first_name:x[0]||'',middle_names:x.length>2?x.slice(1,-1).join(' '):'',last_name:x.length>1?x[x.length-1]:''};}
+function validateProfiles(){const n=names(document.getElementById('primaryFullName').value);if(!n.first_name||!n.last_name||!document.getElementById('primaryPhone').value.trim()){alert('Please enter your full name and mobile number.');return false;}for(let i=2;i<=3;i++){if(!document.getElementById('fn'+i).value.trim()||!document.getElementById('ln'+i).value.trim()){alert('Please enter first and last names for Person '+i+'.');return false;}}return true;}
+document.getElementById('submitBW').onclick=async()=>{
+const msg=document.getElementById('formMessage');msg.className='notice hidden';
+if(!['consentTracing','consentMembership','consentRecovery'].every(id=>document.getElementById(id).checked)){msg.textContent='Please accept all three mandates to continue.';msg.className='notice error';return;}
+if(!['bankName','accountHolder','accountNumber'].every(id=>document.getElementById(id).value.trim())){msg.textContent='Please complete the debit mandate bank details.';msg.className='notice error';return;}
+const p=names(document.getElementById('primaryFullName').value);
+const payload={primary:{full_name:document.getElementById('primaryFullName').value,id_number:document.getElementById('primaryId').value,date_of_birth:document.getElementById('primaryDob').value,phone:document.getElementById('primaryPhone').value,email:document.getElementById('primaryEmail').value},people:[{relationship:'Self',first_name:p.first_name,middle_names:p.middle_names,last_name:p.last_name,id_number:document.getElementById('primaryId').value,date_of_birth:document.getElementById('primaryDob').value,phone:document.getElementById('primaryPhone').value,email:document.getElementById('primaryEmail').value},{relationship:document.getElementById('rel2').value,first_name:document.getElementById('fn2').value,middle_names:document.getElementById('mn2').value,last_name:document.getElementById('ln2').value,id_number:document.getElementById('id2').value,date_of_birth:document.getElementById('dob2').value},{relationship:document.getElementById('rel3').value,first_name:document.getElementById('fn3').value,middle_names:document.getElementById('mn3').value,last_name:document.getElementById('ln3').value,id_number:document.getElementById('id3').value,date_of_birth:document.getElementById('dob3').value}],bank:{bank_name:document.getElementById('bankName').value,account_holder:document.getElementById('accountHolder').value,account_number:document.getElementById('accountNumber').value,branch_code:document.getElementById('branchCode').value},consent:{tracing:true,membership:true,recovery:true}};
+const btn=document.getElementById('submitBW');btn.disabled=true;btn.textContent='Submitting securely…';
+try{const res=await fetch('https://tqiibhjgadukozkjsage.supabase.co/functions/v1/benefitwatch-signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxaWliaGpnYWR1a296a2pzYWdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNjg3NTEsImV4cCI6MjA2OTY0NDc1MX0.eInMGulR6ycLbMpsaCKS8V5A1OfMcPbYrQDeeXLSXC0','Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxaWliaGpnYWR1a296a2pzYWdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNjg3NTEsImV4cCI6MjA2OTY0NDc1MX0.eInMGulR6ycLbMpsaCKS8V5A1OfMcPbYrQDeeXLSXC0'},body:JSON.stringify(payload)});const data=await res.json();if(!res.ok)throw new Error(data.error||'Signup failed');msg.innerHTML='<b>BenefitWatch application received.</b><br>Your reference is <b>'+data.membership_number+'</b>. We will complete the debit-order activation after payment-provider verification.';msg.className='notice success';btn.classList.add('hidden');}catch(e){msg.textContent='We could not submit your BenefitWatch application. Please check the details and try again.';msg.className='notice error';btn.disabled=false;btn.textContent='Activate BenefitWatch — N$35/month';}}
+</script>
+</body></html>
