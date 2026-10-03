@@ -1,3 +1,5 @@
+[Reading 71 lines from start (total: 71 lines, 0 remaining)]
+
 [build]
   publish = "."
 
@@ -62,6 +64,22 @@
   to = "/recovery-services.html"
   status = 200
 
+
+[[redirects]]
+  from = "/how-to-find-unclaimed-pension-namibia"
+  to = "/how-to-find-unclaimed-pension-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/what-are-unclaimed-benefits-namibia"
+  to = "/what-are-unclaimed-benefits-namibia.html"
+  status = 200
+
+[[redirects]]
+  from = "/beneficiary-tracing-for-pension-funds-namibia"
+  to = "/beneficiary-tracing-for-pension-funds-namibia.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -69,3 +87,5 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[executed on device: Sizwe-Mkanya (f471df69-c47c-4a7e-9608-9299b6bfd15d)]
